@@ -37,10 +37,18 @@ function signInWithTwitter() {
         var secret = result.credential.secret;
 
         var user = result.user;
-        alert(user.toString());
+        
     }).catch(function(error) {
         alert(error.message);
     });
+
+    var user = firebase.auth().currentUser;
+
+    if (user) {
+        alert(user.displayName);
+    } else {
+    // No user is signed in.
+    }
 }
 
 function checkIfUserNameExists(username) {
