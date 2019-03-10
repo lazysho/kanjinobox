@@ -30,8 +30,17 @@ function addNewUser(username, password) {
     });
 }
 
-function signInUsingTwitter() {
+function signInWithTwitter() {
+    var provider = new firebase.auth.TwitterAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+        var token = result.credential.accessToken;
+        var secret = result.credential.secret;
 
+        var user = result.user;
+        alert(user);
+    }).catch(function(error) {
+        alert(error.message);
+    });
 }
 
 function checkIfUserNameExists(username) {

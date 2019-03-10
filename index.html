@@ -14,6 +14,7 @@
         <!-- CSS/Scripts -->
         <link rel="stylesheet" href="src/css/kanjinobox.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <script type="text/javascript" src="src/js/kanjinobox.js"></script>
 
         <link href="https://fonts.googleapis.com/css?family=Neucha|Noto+Sans+JP:400,700|Overpass|Sniglet" rel="stylesheet">
@@ -50,15 +51,23 @@
                             <div class="row mx-auto mt-1">
                                 <div class="col-sm col-lg-10 text-center mx-auto mt-2">
                                     <div id="alert-space"></div>
-                                    <input id="username" type="text" placeholder="Email" class="form-control font-sniglet mx-auto">
+                                    <input id="username" type="text" placeholder="Email" class="form-control font-sniglet mx-auto mt-2">
                                     <input id="password" type="password" placeholder="Password" class="form-control font-sniglet mx-auto mt-2">
                                     <div id="cpw-space"></div>
 
                                     <div id="buttons-space" class="text-center">
                                         <button id="openBox" type="button" class="btn btn-block font-sniglet custom-color-01 shadow-sm mt-3"
-                                            onclick="logInOrNewAccount()"> Open Box </button>
-                                        <button id="newBox" type="button" class="btn btn-block font-sniglet custom-color-02 shadow-sm mt-2 mb-3"
-                                            onclick="createNewBox()"> Create New Box </button>
+                                            onclick="logInOrNewAccount()"> 
+                                            <i class="fa fa-box-open mr-2"></i> Open your Kanji Box 
+                                        </button>
+                                        <button id="newBox" type="button" class="btn btn-block font-sniglet custom-color-02 shadow-sm mt-2"
+                                            onclick="createNewBox()"> 
+                                            <i class="fas fa-archive mr-2"></i> Create New Box 
+                                        </button>
+                                        <button id="twitterSignIn" type="button" class="btn btn-block font-sniglet custom-color-03 shadow-sm mt-2 mb-3"
+                                            onclick="signInWithTwitter()"> 
+                                            <i class="fab fa-twitter mr-2"></i> Sign In with Twitter 
+                                        </button>
                                     </div>
                                 </div>
                             </div>

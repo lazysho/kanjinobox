@@ -72,11 +72,25 @@ function logInOrNewAccount() {
                 addNewUser(username, password);
             } else {
                 // show error
-                alert("Password didn't matched.");
+                var parentObj = document.getElementById("alert-space");
+                createHTMLElement("div", "alert", "none", "Password didn't matched.", "alert alert-warning font-sniglet", parentObj);
+                animateCSS("#alert", "animated heartBeat", function() {
+                    setTimeout(animateCSS("#alert", "animated fadeOut", function() {
+                        // remove element
+                        removeHTMLElement(parentObj);
+                    }), 1000);
+                });
             }
         } else {
             // show error
-            alert("No input.");
+            var parentObj = document.getElementById("alert-space");
+            createHTMLElement("div", "alert", "none", "All fields are required.", "alert alert-warning font-sniglet", parentObj);
+            animateCSS("#alert", "animated bounceIn", function() {
+                setTimeout(animateCSS("#alert", "animated fadeOut", function() {
+                    // remove element
+                    removeHTMLElement(parentObj);
+                }), 1000);
+            });
         }
     } else {
         // log in user
@@ -197,8 +211,14 @@ function animateCSS(elementId, animationName, callback) {
 function createHTMLElement(tagName, id, type, placeholder, properties, parentObj) {
     var newElement = document.createElement(tagName);
     newElement.id = id;
-    newElement.type = type;
-    newElement.placeholder = placeholder;
+
+    if (tagName == "input") {
+        newElement.type = type;
+        newElement.placeholder = placeholder;
+    } else {
+        newElement.innerText = placeholder;
+    }
+
     newElement.setAttribute("class", properties);
     parentObj.appendChild(newElement);
 }
