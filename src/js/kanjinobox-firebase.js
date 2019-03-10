@@ -37,7 +37,7 @@ function signInWithTwitter() {
         var secret = result.credential.secret;
 
         var user = result.user;
-        alert(user.user_id);
+        alert(user.toString());
     }).catch(function(error) {
         alert(error.message);
     });
