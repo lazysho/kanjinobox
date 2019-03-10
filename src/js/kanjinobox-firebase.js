@@ -53,6 +53,8 @@ function signInWithTwitter() {
         console.log("  Email: " + profile.email);
         console.log("  Photo URL: " + profile.photoURL);
     });
+    } else {
+        alert("null");
     }
 }
 
