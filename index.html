@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Kanji no Box </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Bootstrap CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+        <!-- CSS/Scripts -->
+        <link rel="stylesheet" href="src/css/kanjinobox.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <script type="text/javascript" src="src/js/kanjinobox.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Neucha|Noto+Sans+JP:400,700|Overpass|Sniglet" rel="stylesheet">
+    </head>
+    <body class="animated bounceIn">
+        <!-- Main Container -->
+        <div class="container">
+            <div class="row mt-2 mx-auto">
+                <div class="col-sm col-lg-5 mx-auto">
+                    <div class="card custom-card mx-auto mt-5">
+                        <div class="card-header bg-transparent">
+                            <div class="row mx-auto mt-2">
+                                <div class="col-sm">
+                                    <img class="rounded mx-auto d-block" src="assets/img/rice-small.png">
+                                </div>
+                                <div class="col-sm">
+                                    <h1 class="display-4 text-center text-white font-sniglet"> 
+                                        kanjinobox
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-header mt-0">
+                            <div class="row mx-auto mt-3">
+                                <div class="col-sm col-lg-12 mx-auto">
+                                    <p class="text-center text-white font-sniglet">
+                                        storage for Kanji encountered on a whim or out of your study routine, <br>
+                                        made for beginners in Japanese just like me <br><br>
+                                        free. all you need is a google account, internet, and patience.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row mx-auto mt-1">
+                                <div class="col-sm col-lg-10 text-center mx-auto mt-2">
+                                    <div id="alert-space"></div>
+                                    <input id="username" type="text" placeholder="Email" class="form-control font-sniglet mx-auto">
+                                    <input id="password" type="password" placeholder="Password" class="form-control font-sniglet mx-auto mt-2">
+                                    <div id="cpw-space"></div>
+
+                                    <div id="buttons-space" class="text-center">
+                                        <button id="openBox" type="button" class="btn btn-block font-sniglet custom-color-01 shadow-sm mt-3"
+                                            onclick="logInOrNewAccount()"> Open Box </button>
+                                        <button id="newBox" type="button" class="btn btn-block font-sniglet custom-color-02 shadow-sm mt-2 mb-3"
+                                            onclick="createNewBox()"> Create New Box </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--<div class="row mx-auto">
+                                <div class="col-sm col-lg-10 setup-section px-sm-5 py-sm-3 px-lg-5 py-lg-3 rounded mx-auto mt-2">
+                                    <legend class="font-sniglet mt-2">firebase.js</legend>
+
+                                    <input id="firebaseScript" type="text" class="form-control font-sniglet mt-2" 
+                                        value="https://www.gstatic.com/firebasejs/5.8.6/firebase.js" readonly>
+                                    
+                                    <div class="float-right">
+                                        <button id="changeScript" type="button" class="btn btn-dark shadow-sm mt-2"
+                                            onclick="changeFirebaseScriptSrc()">Change Src</button>
+                                    </div><br>
+                                        
+
+                                    <legend class="font-sniglet mt-3">Config</legend>
+                                    <textarea id="firebaseConfig" placeholder="Paste your firebase config here." 
+                                        class="form-control font-sniglet mt-2" rows="10"></textarea>
+                                    <div class="text-center">
+                                        <button type="button" class="btn w-50 font-sniglet custom-color-01 shadow-sm mt-3 mb-3"
+                                            onclick="createFirebaseScript()"> Build Box </button>
+                                    </div>
+                                </div>
+                            </div>-->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-functions.js"></script>
+
+    <!-- Kanji no Box Firebase Config -->
+    <script type="text/javascript" src="src/js/kanjinobox-firebase.js"></script>
+</html>

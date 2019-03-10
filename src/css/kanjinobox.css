@@ -1,0 +1,69 @@
+body {
+    background: rgb(34,193,195);
+    background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    overflow: hidden;
+}
+
+/* CARD PROPERTIES */
+
+.custom-border {
+    border: none;
+}
+
+.custom-card {
+    background-color: transparent;
+    height: 88vh;
+    border: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.main-card {
+    height: 60vh;
+    border: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.card::-webkit-scrollbar {
+    width: 0em;
+}
+
+.card::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.card::-webkit-scrollbar-thumb {
+    background-color: #dd7596;
+}
+
+.setup-section {
+    background-color: whitesmoke;
+    box-sizing: border-box;
+}
+
+.font-neucha {
+    font-family: 'Neucha', cursive;
+}
+
+.font-sniglet {
+    font-family: 'Sniglet', cursive;
+}
+
+.font-overpass {
+    font-family: 'Overpass', sans-serif;
+}
+
+.font-12px {
+    font-size: calc(12px + 0.4vw);
+}
+
+.custom-color-01 {
+    background-color: #22c1c3;
+    color: white;
+}
+
+.custom-color-02 {
+    background-color: #fdbb2d;
+    color: white;
+}
