@@ -32,30 +32,45 @@ function addNewUser(emailStr, passwordStr) {
             email: emailStr,
             username: usernameStr,
             firebaseConfig: ""
-        }).then(function() {
-
         }).catch(function(error) {
-
+            
         });
 
+        // redirect to dashboard
+        window.location.href = "pages/setup.html"
     }).catch(function(error) {
-        // handle errors here
-        console.log(error.code);
-        console.log(error.message);
+        // show error
+        var parentObj = document.getElementById("alert-space");
+        createHTMLElement("div", "alert", "none", error.message, "alert alert-warning font-sniglet", parentObj);
+        animateCSS("#alert", "animated bounceIn", function() {
+            setTimeout(animateCSS("#alert", "animated fadeOut", function() {
+                // remove element
+                removeHTMLElement(parentObj);
+            }), 3000);
+        });
     });
 }
 
 function signInWithTwitter() {
     var provider = new firebase.auth.TwitterAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
-        var token = result.credential.accessToken;
-        var secret = result.credential.secret;
-
-        var user = result.user;
-        console.log(user.displayName);
+        // create user document and add to collection
+        var twitterUser = result.user;
+        var firebaseUser = firebase.auth().currentUser;0
         
+        kanjinoboxdb.collection("users").doc(firebaseUser.uid).set({
+            userId: firebaseUser.uid,
+            email: twitterUser.providerData.profile.email,
+            username: twitterUser.providerData.profile.displayName,
+            firebaseConfig: ""
+        }).catch(function(error) {
+            console.log(error.message);
+        });
+
+        // redirect to dashboard
+        window.location.href = "pages/setup.html"
     }).catch(function(error) {
-        alert(error.message);
+        // show error
     });
 
     var user = firebase.auth().currentUser;

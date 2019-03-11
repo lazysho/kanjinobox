@@ -16,25 +16,24 @@ body::-webkit-scrollbar-thumb {
     background-color: whitesmoke;
 }
 
+/* BACKGROUND COLORS */
+.bg-01 {
+    background: rgb(195,34,118);
+    background: -moz-linear-gradient(90deg, rgba(195,34,118,1) 0%, rgba(253,187,45,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(195,34,118,1) 0%, rgba(253,187,45,1) 100%);
+    background: linear-gradient(90deg, rgba(195,34,118,1) 0%, rgba(253,187,45,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c32276",endColorstr="#fdbb2d",GradientType=1);
+}
+
+/* LINKS */
+
 a {
     text-decoration: none !important;
 }
 
 /* CARD PROPERTIES */
-
-.custom-border {
-    border: none;
-}
-
 .custom-card {
     background-color: transparent;
-    border: none;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-.main-card {
-    height: 60vh;
     border: none;
     overflow-y: auto;
     overflow-x: hidden;
@@ -53,10 +52,14 @@ a {
 }
 
 .setup-section {
-    background-color: whitesmoke;
-    box-sizing: border-box;
+    background-color: transparent;
 }
 
+.tutorial-img {
+    width: 100%;
+}
+
+/* FONTS */
 .font-neucha {
     font-family: 'Neucha', cursive;
 }
@@ -73,6 +76,7 @@ a {
     font-size: calc(12px + 0.4vw);
 }
 
+/* COLORS */
 .custom-color-01 {
     background-color: #22c1c3;
     color: white;
@@ -85,6 +89,11 @@ a {
 
 .custom-color-03 {
     background-color: #00acee;
+    color: white;
+}
+
+.custom-color-04 {
+    background-color: #c32276;
     color: white;
 }
 

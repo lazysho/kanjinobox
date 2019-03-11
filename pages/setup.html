@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Setup </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Bootstrap CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+        <!-- CSS/Scripts -->
+        <link rel="stylesheet" href="../src/css/kanjinobox.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <script type="text/javascript" src="../src/js/kanjinobox.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Neucha|Noto+Sans+JP:400,700|Overpass|Sniglet" rel="stylesheet">
+    </head>
+    <body class="animated zoomInUp bg-01">
+        <!-- Main Container -->
+        <div class="container">
+            <div class="row mt-5 mx-auto">
+                <div class="col-sm col-lg-12 mx-auto">
+                    <div class="card custom-card mx-auto mt-0 mb-5">
+                        <div class="card-header border-0 bg-transparent">
+                            <div class="row mx-auto mt-0">
+                                <div class="col-sm col-lg-12">
+                                    <img class="rounded mx-auto d-block" src="../assets/img/rice-small.png">
+                                </div>
+                                <div class="col-sm col-lg-12">
+                                    <h1 class="text-center text-white font-sniglet"> kanjinobox </h1>
+                                    <h4 class="text-center text-white">
+                                        <kbd class="font-sniglet">database setup</kbd>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body bg-transparent mt-0">
+                            <div class="row mx-auto mt-0">
+                                <div class="col-sm col-lg-10 mx-auto mt-3">
+                                    <legend class="text-white text-center font-sniglet">
+                                        konichiwa! welcome to kanji no box! i am glad you find this application useful
+                                    </legend>
+                                </div>
+                            </div>
+                            <div class="row mx-auto mt-0">
+                                <div class="col-sm col-lg-3 mx-auto mt-3">
+                                    <img class="rounded mx-auto d-block" src="../assets/img/girl-8-small.png">
+                                </div>
+                                <div class="col-sm col-lg-8 setup-section rounded shadow-lg mx-auto mt-3">
+                                    <p class="text-white text-justify font-sniglet px-3 pt-5">
+                                        before everything else, we need to set up your database. i am very sorry for asking you
+                                        to do technical stuffs... as of the moment, this is the only way i could think of 
+                                        on how to provide you a storage you can use all by yourself—for no cost <br><br>
+
+                                        don't worry, if you are interested to know how kanji no box works,
+                                        i will explain everything later. for now let's start allocating memory space for your box! &nbsp; <i class="far fa-heart"></i>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row mx-auto mt-5">
+                                <div class="col-sm col-lg-7 mx-auto mt-3">
+                                    <img class="rounded mx-auto tutorial-img d-block" src="../assets/tutorial/setup-01.gif">
+                                </div>
+                                <div class="col-sm col-lg-5 mx-auto mt-0">
+                                    <h1 class="display-4 text-white text-center font-sniglet mt-3">1</h1>
+                                    <legend class="text-white text-center font-sniglet mt-1">
+                                        Go to Firebase and sign in using your Google Account &nbsp;
+                                        <a class="text-white" href="https://firebase.google.com/"><i class="fas fa-external-link-square-alt"></i></a>
+                                    </legend>
+                                    <p class="text-white text-justify font-sniglet rounded shadow-lg px-3 py-2 mt-1">
+                                        firebase is a lot of things. it has many features that lessens work of developers. <br><br>
+                                        kanji no box takes advantage of firebase's authentication feature as well as 
+                                        what you're setting up right now, a database.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row mx-auto mt-3">
+                                <div class="col-sm col-lg-7 mx-auto mt-3">
+                                    <img class="rounded mx-auto tutorial-img d-block" src="../assets/tutorial/setup-02.gif">
+                                </div>
+                                <div class="col-sm col-lg-5 mx-auto mt-0">
+                                    <h1 class="display-4 text-white text-center font-sniglet mt-1">2</h1>
+                                    <legend class="text-white text-center font-sniglet mt-0">
+                                        Go to your Firebase Console and create a new Firebase Project &nbsp;
+                                    </legend>
+                                    <p class="text-white text-justify font-sniglet rounded shadow-lg px-3 py-2 mt-1">
+                                        name your project <kbd class="font-sniglet">kanjinobox-yourusername</kbd>
+                                        changing <kbd class="font-sniglet">yourusername</kbd> to anything
+                                        you like as long as it isn't your true name. in my case, i wrote sho <br><br>
+                                        by the way your default username is your email, exclusive of @ part
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row mx-auto mt-3">
+                                <div class="col-sm col-lg-7 mx-auto mt-3">
+                                    <img class="rounded mx-auto tutorial-img d-block" src="../assets/tutorial/setup-03.gif">
+                                </div>
+                                <div class="col-sm col-lg-5 mx-auto mt-0">
+                                    <h1 class="display-4 text-white text-center font-sniglet mt-1">3</h1>
+                                    <legend class="text-white text-center font-sniglet mt-0">
+                                        Create a Database &nbsp;
+                                    </legend>
+                                    <p class="text-white text-justify font-sniglet rounded shadow-lg px-3 py-2 mt-1">
+                                        there are two kinds of database firebase offers—realtime and firestore. <br><br>
+                                        make sure to choose <kbd class="font-sniglet">firestore</kbd> then for the
+                                        security rules of your database, select <kbd class="font-sniglet">start in test mode</kbd>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row mx-auto mt-3">
+                                <div class="col-sm col-lg-7 mx-auto mt-3">
+                                    <img class="rounded mx-auto tutorial-img d-block" src="../assets/tutorial/setup-04.gif">
+                                </div>
+                                <div class="col-sm col-lg-5 mx-auto mt-0">
+                                    <h1 class="display-4 text-white text-center font-sniglet mt-1">4</h1>
+                                    <legend class="text-white text-center font-sniglet mt-0">
+                                        Copy Configuration &nbsp;
+                                    </legend>
+                                    <p class="text-white text-justify font-sniglet rounded shadow-lg px-3 py-2 mt-1">
+                                        this is the crucial part in our setup, its the configuration that will link your
+                                        project to the database you just created <br><br>
+                                        please, only copy the highlighted part—refer to gif—not the whole configuration.
+                                        do not include the <kbd class="font-sniglet">&lt;script></kbd> tags and the
+                                        last line before <kbd class="font-sniglet">&lt;/script&gt;</kbd>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body bg-transparent px-3 py-2 mt-3">
+                            <div class="row mx-auto">
+                                <div class="col-sm col-lg-5 mx-auto mt-0">
+                                    <h1 class="display-4 text-white text-center font-sniglet mt-3">5</h1>
+                                    <legend class="text-white text-center font-sniglet mt-0">
+                                        Paste Configuration &nbsp;
+                                    </legend>
+                                    <p class="text-white font-sniglet rounded shadow-lg px-3 py-2 mt-1">
+                                        paste configuration at the text area at right. at the bottom, add the following lines of code
+                                    </p>
+                                    <p class="text-white font-sniglet px-3">
+                                        var userdb = firebase.initializeApp(config, "userdb"); <br><br>
+
+                                        function getUserDatabase() { <br>
+                                            return userdb; <br>
+                                        }
+                                    </p>
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-sm font-sniglet bg-dark text-white shadow-sm mb-3 float-right"
+                                            onclick=""> Copy </button>
+                                    </div>
+                                </div>
+                                <div class="col-sm col-lg-7 px-sm-5 py-sm-3 px-lg-5 py-lg-3 rounded mx-auto mt-1">
+                                    <legend class="text-white font-sniglet mt-0">Configuration</legend>
+                                    <textarea id="firebaseConfig" placeholder="Paste your firebase config here." 
+                                        class="form-control font-sniglet mt-2" rows="12"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row mx-auto">
+                                <div class="col-sm col-lg-8 mx-auto mt-0">
+                                    <h1 class="display-4 text-white text-center font-sniglet mt-3">6</h1>
+                                    <legend class="text-white text-center font-sniglet mt-0">
+                                        Build your Box &nbsp;
+                                    </legend>
+                                    <p class="text-white text-justify font-sniglet rounded shadow-lg px-3 py-2 mt-1">
+                                        yes, that's it... set up would only take 3 to 5 minutes! from this moment
+                                        onward, kanji no box will handle everything for you... well except for
+                                        the security rules or anything that requires opening your firebase account <br> <br>
+
+                                        if you got confused along the way, you can watch the whole set up process below <br><br>
+                                        and when you are ready, just click the build button <i class="far fa-heart"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row mx-auto">
+                                <div class="col-sm col-lg-10 mx-auto mt-5">
+                                    <legend class="text-white text-center font-sniglet mt-0">
+                                        Part 01
+                                    </legend>
+                                    <img class="rounded mx-auto tutorial-img d-block" src="../assets/tutorial/setup-whole-01.gif">
+                                </div>
+                                <div class="col-sm col-lg-10 mx-auto mt-5">
+                                    <legend class="text-white text-center font-sniglet mt-0">
+                                        Part 02
+                                    </legend>
+                                    <img class="rounded mx-auto tutorial-img d-block" src="../assets/tutorial/setup-whole-02.gif">
+                                </div>
+                            </div>
+
+                            <div class="row mx-auto">
+                                <div class="col-sm col-lg-10 mx-auto mt-3">
+                                    <div class="text-center">
+                                        <button type="button" class="btn w-50 font-sniglet custom-color-04 shadow-sm mt-3 mb-3"
+                                            onclick="createFirebaseScript()"> Build Box </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-footer bg-transparent mx-auto">
+                            <div class="row mx-auto mt-0">
+                                <div class="col-sm col-lg-12 text-center">
+                                    <a href="https://github.com/lazysho" target="_blank">
+                                    <button type="button" class="btn btn-sm text-white font-sniglet bg-transparent mt-0"> 
+                                        <i class="fas fa-code mr-2"></i> made by sho
+                                    </button></a>
+                                </div>
+                            </div>
+                            <div class="row mx-auto mt-0">
+                                <div class="col-sm text-justify">
+                                    <button type="button" class="btn btn-sm text-white font-sniglet bg-transparent mb-2" style="white-space: normal"> 
+                                        <i class="fas fa-exclamation mr-2"></i> 
+                                        i use firebase & github in this project but i am not in any way affiliated to them
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-functions.js"></script>
+
+    <!-- Kanji no Box Firebase Config -->
+    <script type="text/javascript" src="../src/js/kanjinobox-firebase.js"></script>
+</html>

@@ -53,6 +53,10 @@ function createNewBox() {
             // change button text and color
             document.getElementById("newBox").innerText = "Create New Box";
             document.getElementById("openBox").innerText = "Open Box";
+
+            // empty contents of fields
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
         });   
     }
 }
@@ -74,7 +78,7 @@ function logInOrNewAccount() {
                 // show error
                 var parentObj = document.getElementById("alert-space");
                 createHTMLElement("div", "alert", "none", "Password didn't matched.", "alert alert-warning font-sniglet", parentObj);
-                animateCSS("#alert", "animated heartBeat", function() {
+                animateCSS("#alert", "animated bounceIn", function() {
                     setTimeout(animateCSS("#alert", "animated fadeOut", function() {
                         // remove element
                         removeHTMLElement(parentObj);
@@ -122,10 +126,10 @@ function createFirebaseScript() {
             addScriptToHTML(firebaseScript, true);
             addScriptToHTML(firebaseConfig, false);
         } else {
-            alert(configMatch.length + " : " + importantFirebaseConfigContent.length + "\n" + configMatch);
+            // show error
         }
     } else {
-        
+        // show error
     }
 }
 
@@ -225,6 +229,11 @@ function createHTMLElement(tagName, id, type, placeholder, properties, parentObj
 
 function removeHTMLElement(parentObj) {
     parentObj.removeChild(parentObj.firstChild);
+}
+
+// AUTHENTICATION
+function checkUserSession() {
+    
 }
 
 // ROOT
