@@ -93,7 +93,5 @@ function checkIfUserNameExists(username) {
 
 // ROOT
 $(document).ready(function () {
-    // init app and app's firestore
-    initKanjiNoBoxApp();
-    initKanjiNoBoxFirestore();
+    
 });

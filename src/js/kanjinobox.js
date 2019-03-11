@@ -1,5 +1,6 @@
 
 // FIRESTORE FUNCTIONS
+var kanjinoboxdb;
 var userdb;
 
 function initUserFirestore() {
@@ -240,7 +241,7 @@ function checkUserSession() {
             if (doc.exists) {
                 if (doc.firebaseConfig == "") {
                     // redirect to database setup
-                    if (window.location.href != "pages/setup.html") {
+                    if (window.location.href != "index.html") {
                         window.location.href = "pages/setup.html";
                     }
                 } else {
@@ -255,16 +256,19 @@ function checkUserSession() {
             console.log(error);
         });
     } else {
-        window.location.href = "../index.html";
+        if (window.location.href == "pages/setup.html") {
+            window.location.href = "../index.html";
+        }
     }
 }
 
 // ROOT
 $(document).ready(function () {
-    // init kanji no box's firebase
+    // init app and app's firestore
     initKanjiNoBoxApp();
     initKanjiNoBoxFirestore();
-    
+    kanjinoboxdb = getKanjiNoBoxFirestore();
+
     // check if user is logged in or not
     checkUserSession();
 
