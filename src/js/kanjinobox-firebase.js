@@ -71,6 +71,7 @@ function signInWithTwitter() {
         window.location.href = "pages/setup.html"
     }).catch(function(error) {
         // show error
+        console.log(error.message);
     });
 
     var user = firebase.auth().currentUser;

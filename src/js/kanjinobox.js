@@ -1,10 +1,9 @@
 
 // FIRESTORE FUNCTIONS
-var kanjinoboxdb;
 var userdb;
 
 function initUserFirestore() {
-
+    
 }
 
 function addNewKanji(kanjiStr, meaningStr) {
@@ -233,11 +232,38 @@ function removeHTMLElement(parentObj) {
 
 // AUTHENTICATION
 function checkUserSession() {
-    
+    var currentUser = firebase.auth().currentUser;
+
+    if (currentUser != null) {
+        var ref = kanjinoboxdb.collection("users").doc(currentUser.uid);
+        ref.get().then(function(doc) {
+            if (doc.exists) {
+                if (doc.firebaseConfig == "") {
+                    // redirect to database setup
+                    if (window.location.href != "pages/setup.html") {
+                        window.location.href = "pages/setup.html";
+                    }
+                } else {
+                    // redirect to dashboard
+                    console.log("To dashboard.");
+                }
+            } else {
+                // show error
+                console.log("User document doesn't exist.");
+            }
+        }).catch(function(error) {
+            console.log(error);
+        });
+    } else {
+        window.location.href = "../index.html";
+    }
 }
 
 // ROOT
 $(document).ready(function () {
+    // check if user is logged in or not
+    checkUserSession();
+    
     // init tooltip functions
     $('[data-toggle="tooltip"]').tooltip();
     $('[data-toggle="popover"]').popover();
