@@ -22,8 +22,23 @@ function getKanjiNoBoxFirestore() {
     return kanjinoboxdb;
 }
 
-function addNewUser(username, password) {
-    firebase.auth().createUserWithEmailAndPassword(username, password).catch(function(error) {
+function addNewUser(emailStr, passwordStr) {
+    firebase.auth().createUserWithEmailAndPassword(emailStr, passwordStr).then(function(result) {
+        // create user document and add to collection
+        var temp = emailStr.split("@");
+        var usernameStr = temp[0];
+        kanjinoboxdb.collection("users").doc(result.user.uid).set({
+            userId: result.user.uid,
+            email: emailStr,
+            username: usernameStr,
+            firebaseConfig: ""
+        }).then(function() {
+
+        }).catch(function(error) {
+
+        });
+
+    }).catch(function(error) {
         // handle errors here
         console.log(error.code);
         console.log(error.message);

@@ -229,6 +229,7 @@ function removeHTMLElement(parentObj) {
 
 // ROOT
 $(document).ready(function () {
-    // init app's firestore first
-    
+    // init tooltip functions
+    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="popover"]').popover();
 });

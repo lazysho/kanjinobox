@@ -24,32 +24,48 @@
         <div class="container">
             <div class="row mt-2 mx-auto">
                 <div class="col-sm col-lg-5 mx-auto">
-                    <div class="card custom-card mx-auto mt-5">
+                    <div class="card custom-card mx-auto mt-3 mb-5">
                         <div class="card-header bg-transparent">
                             <div class="row mx-auto mt-2">
-                                <div class="col-sm">
+                                <div class="col-sm col-lg-12">
                                     <img class="rounded mx-auto d-block" src="assets/img/rice-small.png">
                                 </div>
-                                <div class="col-sm">
-                                    <h1 class="display-4 text-center text-white font-sniglet"> 
+                                <div class="col-sm col-lg-12">
+                                    <h1 class="text-center text-white font-sniglet"> 
                                         kanjinobox
                                     </h1>
                                 </div>
                             </div>
                         </div>
+
                         <div class="card-header mt-0">
                             <div class="row mx-auto mt-3">
                                 <div class="col-sm col-lg-12 mx-auto">
                                     <p class="text-center text-white font-sniglet">
                                         storage for Kanji encountered on a whim or out of your study routine, <br>
                                         made for beginners in Japanese just like me <br><br>
-                                        free. all you need is a google account, internet, and patience.
+                                        free, all you need is a <br>
+                                        <kbd class="bg-info font-sniglet" data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover"
+                                            data-html="true" title="<span class='font-sniglet'>google account?</span>"
+                                            data-content="<span class='font-sniglet'>
+                                                kanji no box aims to provide users a storage they can use all for themselves <br><br>
+                                                instead of one database for everyone, each user needs a google gccount to create a cloud firestore 
+                                                database to link to their respective boxes </span>">google account</kbd> &nbsp;
+                                        <kbd class="bg-warning font-sniglet" data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover"
+                                            data-html="true" title="<span class='font-sniglet'>internet?</span>"
+                                            data-content="<span class='font-sniglet'>
+                                                is essential in using kanji no box as firestore, place where you'll save your Kanjis,
+                                                is an online database </span>">internet</kbd> &nbsp; and &nbsp;
+                                        <kbd class="bg-danger font-sniglet" data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover"
+                                            data-html="true" title="<span class='font-sniglet'>patience?</span>"
+                                            data-content="<span class='font-sniglet'>
+                                                don't worry, this is only needed at the start for the database set up </span>">patience</kbd>
                                     </p>
                                 </div>
                             </div>
 
-                            <div class="row mx-auto mt-1">
-                                <div class="col-sm col-lg-10 text-center mx-auto mt-2">
+                            <div class="row mx-auto mt-0">
+                                <div class="col-sm col-lg-10 text-center mx-auto">
                                     <div id="alert-space"></div>
                                     <input id="username" type="text" placeholder="Email" class="form-control font-sniglet mx-auto mt-2">
                                     <input id="password" type="password" placeholder="Password" class="form-control font-sniglet mx-auto mt-2">
@@ -64,9 +80,33 @@
                                             onclick="createNewBox()"> 
                                             <i class="fas fa-archive mr-2"></i> Create New Box 
                                         </button>
-                                        <button id="twitterSignIn" type="button" class="btn btn-block font-sniglet custom-color-03 shadow-sm mt-2 mb-3"
+                                        <br>
+                                        <button id="twitterSignIn" type="button" class="btn btn-block font-sniglet custom-color-03 shadow-sm mt-2"
                                             onclick="signInWithTwitter()"> 
                                             <i class="fab fa-twitter mr-2"></i> Sign In with Twitter 
+                                        </button>
+                                        <a href="https://github.com/lazysho/kanjinobox">
+                                            <button id="viewOnGithub" type="button" class="btn btn-block text-white font-sniglet bg-dark shadow-sm mt-2 mb-3"> 
+                                                <i class="fab fa-github mr-2"></i> View on Github
+                                        </button></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-footer bg-transparent">
+                                <div class="row mx-auto mt-0">
+                                    <div class="col-sm col-lg-12 text-center">
+                                        <a href="https://github.com/lazysho" target="_blank">
+                                        <button type="button" class="btn btn-sm text-white font-sniglet bg-transparent mt-0"> 
+                                            <i class="fas fa-code mr-2"></i> made by sho
+                                        </button></a>
+                                    </div>
+                                </div>
+                                <div class="row mx-auto mt-0">
+                                    <div class="col-sm text-justify">
+                                        <button type="button" class="btn btn-sm text-white font-sniglet bg-transparent mb-2" style="white-space: normal"> 
+                                            <i class="fas fa-exclamation mr-2"></i> 
+                                            i use firebase & github in this project but i am not in any way affiliated to them
                                         </button>
                                     </div>
                                 </div>
