@@ -31,7 +31,7 @@ function addNewUser(emailStr, passwordStr) {
             userId: result.user.uid,
             email: emailStr,
             username: usernameStr,
-            firebaseConfig: ""
+            firebaseConfig: null
         }).catch(function(error) {
             
         });
@@ -53,10 +53,10 @@ function addNewUser(emailStr, passwordStr) {
 
 function signInWithTwitter() {
     if (firebase.auth().currentUser != null) {
-        var ref = kanjinoboxdb.collection("users").doc(currentUser.uid);
+        var ref = kanjinoboxdb.collection("users").doc(firebase.auth().currentUser.uid);
         ref.get().then(function(doc) {
             if (doc.exists) {
-                if (doc.firebaseConfig == "") {
+                if (doc.firebaseConfig == null) {
                     // redirect to database setup
                     if (window.location.href != "index.html") {
                         window.location.href = "pages/setup.html";
@@ -76,18 +76,44 @@ function signInWithTwitter() {
         var provider = new firebase.auth.TwitterAuthProvider();
         firebase.auth().signInWithPopup(provider).then(function(result) {
             // create user document and add to collection
-            var twitterUser = result.user;
             var firebaseUser = firebase.auth().currentUser;
-            
+
             if(!checkIfUserExists(firebaseUser.uid)) {
                 console.log("Creating user document....");
+                var usernameStr = "";
+
+                firebaseUser.providerData.forEach(function(profile) {
+                    usernameStr = profile.displayName;
+                });
+
                 kanjinoboxdb.collection("users").doc(firebaseUser.uid).set({
                     userId: firebaseUser.uid,
                     email: "",
-                    username: twitterUser.providerData.profile.displayName,
-                    firebaseConfig: ""
+                    username: usernameStr,
+                    firebaseConfig: null
                 }).catch(function(error) {
                     console.log(error.message);
+                });
+            } else {
+                var ref = kanjinoboxdb.collection("users").doc(firebaseUser.currentUser.uid);
+                ref.get().then(function(doc) {
+                    if (doc.exists) {
+                        if (doc.firebaseConfig == null) {
+                            console.log("Configuration is null.");
+                            // redirect to database setup
+                            if (window.location.href != "index.html") {
+                                window.location.href = "pages/setup.html";
+                            }
+                        } else {
+                            // redirect to dashboard
+                            console.log("To dashboard.");
+                        }
+                    } else {
+                        // show error
+                        console.log("User document doesn't exist.");
+                    }
+                }).catch(function(error) {
+                    console.log(error);
                 });
             }
             

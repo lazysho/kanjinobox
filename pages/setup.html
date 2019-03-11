@@ -94,7 +94,8 @@
                                         name your project <kbd class="font-sniglet">kanjinobox-yourusername</kbd>
                                         changing <kbd class="font-sniglet">yourusername</kbd> to anything
                                         you like as long as it isn't your true name. in my case, i wrote sho <br><br>
-                                        by the way your default username is your email, exclusive of @provide.xxx part
+                                        by the way your default username is your email, exclusive of @provide.xxx part.
+                                        if you opt for sign in with twitter, username = display name
                                     </p>
                                 </div>
                             </div>
@@ -163,9 +164,30 @@
                                 </div>
                             </div>
 
+                            <div class="row mx-auto mt-3">
+                                <div class="col-sm col-lg-7 mx-auto mt-3">
+                                    <img class="rounded mx-auto tutorial-img d-block" src="../assets/tutorial/extra-setup.gif">
+                                </div>
+                                <div class="col-sm col-lg-5 mx-auto mt-0">
+                                    <h1 class="display-4 text-white text-center font-sniglet mt-1">6</h1>
+                                    <legend class="text-white text-center font-sniglet mt-0">
+                                        Authorize Domain &nbsp;
+                                    </legend>
+                                    <p class="text-white text-justify font-sniglet rounded shadow-lg px-3 py-2 mt-1">
+                                        this is just to make sure authentication is secure and redirects will work, 
+                                        especially if there are third-party apps such as twitter that can be used for
+                                        sign up or account creation <br><br>
+
+                                        in the project overview of your firebase project, go to authenticate found 
+                                        under develop at left side of screen, sign-in method tab, then scroll down to
+                                        authorized domains. add <kbd class="font-sniglet">kanjinobox.firebaseapp.com</kbd>
+                                    </p>
+                                </div>
+                            </div>
+
                             <div class="row mx-auto">
                                 <div class="col-sm col-lg-8 mx-auto mt-0">
-                                    <h1 class="display-4 text-white text-center font-sniglet mt-3">6</h1>
+                                    <h1 class="display-4 text-white text-center font-sniglet mt-3">7</h1>
                                     <legend class="text-white text-center font-sniglet mt-0">
                                         Build your Box &nbsp;
                                     </legend>
@@ -183,15 +205,21 @@
                             <div class="row mx-auto">
                                 <div class="col-sm col-lg-10 mx-auto mt-5">
                                     <legend class="text-white text-center font-sniglet mt-0">
-                                        Part 01
+                                        Sign in to Firebase and Create a Project
                                     </legend>
                                     <img class="rounded mx-auto tutorial-img d-block" src="../assets/tutorial/setup-whole-01.gif">
                                 </div>
                                 <div class="col-sm col-lg-10 mx-auto mt-5">
                                     <legend class="text-white text-center font-sniglet mt-0">
-                                        Part 02
+                                        Create Database and Copy Configuration
                                     </legend>
                                     <img class="rounded mx-auto tutorial-img d-block" src="../assets/tutorial/setup-whole-02.gif">
+                                </div>
+                                <div class="col-sm col-lg-10 mx-auto mt-5">
+                                    <legend class="text-white text-center font-sniglet mt-0">
+                                        Authorize Domain for Third-Party Authentication
+                                    </legend>
+                                    <img class="rounded mx-auto tutorial-img d-block" src="../assets/tutorial/extra-setup.gif">
                                 </div>
                             </div>
 
@@ -199,7 +227,7 @@
                                 <div class="col-sm col-lg-10 mx-auto mt-3">
                                     <div class="text-center">
                                         <button type="button" class="btn w-50 font-sniglet custom-color-04 shadow-sm mt-3 mb-3"
-                                            onclick="createFirebaseScript()"> Build Box </button>
+                                            onclick="createFirebaseConfig()"> Build Box </button>
                                     </div>
                                 </div>
                             </div>

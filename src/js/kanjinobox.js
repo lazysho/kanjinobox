@@ -4,11 +4,14 @@ var kanjinoboxdb;
 var userdb;
 
 function initUserFirestore() {
+    var userApp = getUserDatabase();
+    userdb = userApp.firestore();
     
+    addNewKanji("kizu", "wound");
 }
 
 function addNewKanji(kanjiStr, meaningStr) {
-    db.collection("kanjiBox").add({
+    userdb.collection("kanjiBox").add({
         kanji: kanjiStr,
         meaning: meaningStr
     }).then(function(docRef) {
@@ -103,33 +106,34 @@ function logInOrNewAccount() {
 }
 
 // CONNECTING USER TO HIS OWN FIRESTORE
-function createFirebaseScript() {
+function createFirebaseConfig() {
     // variables
     var importantFirebaseConfigContent =
         ['apiKey:', 'authDomain:', 'databaseURL:', 'projectId:', 'storageBucket:', 'messagingSenderId:'];
 
     // get textbox and text area content
     var firebaseConfig = document.getElementById('firebaseConfig').value;
-    var firebaseScript = document.getElementById('firebaseScript').value;
     
     // check if there's input or only whitespace
-    if (firebaseConfig != "" && firebaseScript != null) {
+    if (firebaseConfig != "") {
         // replace all new line with space and split
         var splitConfig = firebaseConfig.split(" ");
 
-        // look for the script tags, and important stuffs in a firebaseScript
+        // look for the script tags, and important stuffs in a firebaseConfig
         var configMatch = validateScript(importantFirebaseConfigContent, splitConfig);
 
         // if all are found in script pasted by user
         if (configMatch.length == importantFirebaseConfigContent.length) {
             firebaseConfig = splitConfig.join(" ");
-            addScriptToHTML(firebaseScript, true);
             addScriptToHTML(firebaseConfig, false);
+            setTimeout(initUserFirestore, 3000);
         } else {
             // show error
+            console.log("invalid script");
         }
     } else {
         // show error
+        console.log("null");
     }
 }
 
@@ -190,15 +194,12 @@ function addScriptToHTML(scriptStr, isAttribute) {
 
         newScript.appendChild(inlineScript);
         $("html").append(newScript);
-
-        firestoreInit();
     }
     
 }
 
 // ANIMATIONS
 function animateCSS(elementId, animationName, callback) {
-    const node = document.getElementById(elementId);
     $(elementId).addClass(animationName);
 
     function handleAnimationEnd() {
@@ -236,10 +237,12 @@ function checkUserSession() {
     var currentUser = firebase.auth().currentUser;
 
     if (currentUser != null) {
+        console.log("User is not null.");
         var ref = kanjinoboxdb.collection("users").doc(currentUser.uid);
         ref.get().then(function(doc) {
             if (doc.exists) {
-                if (doc.firebaseConfig == "") {
+                if (doc.firebaseConfig == null) {
+                    console.log("Configuration is null.");
                     // redirect to database setup
                     if (window.location.href != "index.html") {
                         window.location.href = "pages/setup.html";
@@ -256,6 +259,7 @@ function checkUserSession() {
             console.log(error);
         });
     } else {
+        console.log("User is null.");
         if (window.location.href == "pages/setup.html") {
             window.location.href = "../index.html";
         }
