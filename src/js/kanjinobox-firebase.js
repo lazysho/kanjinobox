@@ -83,7 +83,7 @@ function signInWithTwitter() {
                 console.log("Creating user document....");
                 kanjinoboxdb.collection("users").doc(firebaseUser.uid).set({
                     userId: firebaseUser.uid,
-                    email: twitterUser.providerData.profile.email,
+                    email: "",
                     username: twitterUser.providerData.profile.displayName,
                     firebaseConfig: ""
                 }).catch(function(error) {
