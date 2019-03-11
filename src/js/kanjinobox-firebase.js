@@ -53,26 +53,31 @@ function addNewUser(emailStr, passwordStr) {
 
 function signInWithTwitter() {
     var provider = new firebase.auth.TwitterAuthProvider();
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-        // create user document and add to collection
-        var twitterUser = result.user;
-        var firebaseUser = firebase.auth().currentUser;0
-        
-        kanjinoboxdb.collection("users").doc(firebaseUser.uid).set({
-            userId: firebaseUser.uid,
-            email: twitterUser.providerData.profile.email,
-            username: twitterUser.providerData.profile.displayName,
-            firebaseConfig: ""
+
+    if (firebase.auth().currentUser != null) {
+        window.location.href = "pages/setup.html"
+    } else {
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+            // create user document and add to collection
+            var twitterUser = result.user;
+            var firebaseUser = firebase.auth().currentUser;0
+            
+            kanjinoboxdb.collection("users").doc(firebaseUser.uid).set({
+                userId: firebaseUser.uid,
+                email: twitterUser.providerData.profile.email,
+                username: twitterUser.providerData.profile.displayName,
+                firebaseConfig: ""
+            }).catch(function(error) {
+                console.log(error.message);
+            });
         }).catch(function(error) {
+            // show error
             console.log(error.message);
         });
-
-        // redirect to dashboard
+        
         window.location.href = "pages/setup.html"
-    }).catch(function(error) {
-        // show error
-        console.log(error.message);
-    });
+    }
+    
 }
 
 function checkIfUserNameExists(username) {
