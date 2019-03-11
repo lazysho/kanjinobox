@@ -261,9 +261,13 @@ function checkUserSession() {
 
 // ROOT
 $(document).ready(function () {
+    // init kanji no box's firebase
+    initKanjiNoBoxApp();
+    initKanjiNoBoxFirestore();
+    
     // check if user is logged in or not
     checkUserSession();
-    
+
     // init tooltip functions
     $('[data-toggle="tooltip"]').tooltip();
     $('[data-toggle="popover"]').popover();
